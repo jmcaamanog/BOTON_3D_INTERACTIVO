@@ -103,7 +103,7 @@ Ideal para compartir un enlace por WhatsApp que funcione al instante en **Androi
 4. **Reclama el sitio con una cuenta gratuita** (*Claim site* con Google o correo):
    - Sin cuenta el enlace caduca en **1 hora**.
    - Con cuenta gratuita **no caduca nunca** y puedes personalizar el nombre en *Site configuration → Change site name* (ej. `mi-proyecto-3d.netlify.app`).
-5. Comparte el enlace `https://...netlify.app` por WhatsApp o Telegram.
+5. Comparte el enlace `https://...netlify.app` por WhatsApp o Telegram (ejemplo real de este proyecto ya publicado y funcionando: **https://boton-mercadona-3d.netlify.app/**).
 
 > **Para actualizar el proyecto en el futuro**: entra en tu panel de Netlify → tu sitio → pestaña **Deploys** y vuelve a arrastrar la carpeta actualizada. El enlace sigue siendo el mismo.
 

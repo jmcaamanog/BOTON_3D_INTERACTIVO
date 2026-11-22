@@ -6,10 +6,14 @@
 </p>
 
 <p align="center">
-  <a href="https://jmcaamanog.github.io/BOTON_3D_INTERACTIVO/">
-    <strong>🚀 ABRIR VISOR 3D INTERACTIVO ONLINE (PC · Android · iPhone)</strong>
+  <a href="https://boton-mercadona-3d.netlify.app/">
+    <strong>🚀 PROBAR EN VIVO (Netlify)</strong>
   </a>
   &nbsp;·&nbsp;
+  <a href="https://jmcaamanog.github.io/BOTON_3D_INTERACTIVO/">
+    <strong>🌐 Visor en GitHub Pages</strong>
+  </a>
+  <br/>
   <a href="https://jmcaamanog.github.io/BOTON_3D_INTERACTIVO/?demo=corte">✂️ Corte 3D</a>
   &nbsp;·&nbsp;
   <a href="https://jmcaamanog.github.io/BOTON_3D_INTERACTIVO/?demo=rayosx">☢️ Rayos X</a>
@@ -117,7 +121,7 @@ Todos los archivos han sido verificados como **mallas 2-manifold cerradas (*wate
 ## 💻 Uso en local y documentación técnica para aprender
 
 - **Abrir en tu ordenador (sin internet)**: descarga [index.html](index.html) (`4,67 MB`) y haz **doble clic**. Incluye embebidos el motor WebGL, Tailwind CSS, las 27 mallas 3D, la canción MP3 y las 3 fotos de electrónica.
-- **Abrir en Android o iPhone**: entra directamente en **[https://jmcaamanog.github.io/BOTON_3D_INTERACTIVO/](https://jmcaamanog.github.io/BOTON_3D_INTERACTIVO/)**. En Chrome (Android) o Safari (iPhone) puedes usar *"Añadir a pantalla de inicio"* para tenerlo como app.
+- **Abrir en Android o iPhone**: entra directamente en **[https://boton-mercadona-3d.netlify.app/](https://boton-mercadona-3d.netlify.app/)** (o en el espejo de GitHub Pages: **[https://jmcaamanog.github.io/BOTON_3D_INTERACTIVO/](https://jmcaamanog.github.io/BOTON_3D_INTERACTIVO/)**). En Chrome (Android) o Safari (iPhone) puedes usar *"Añadir a pantalla de inicio"* para tenerlo como app.
 - **¿Quieres saber cómo funciona por dentro y cómo crear o publicar proyectos parecidos?** Lee la guía completa paso a paso en **[GUIA_PROYECTO.md](GUIA_PROYECTO.md)** (arquitectura WebGL/GLSL, Stencil Buffer, exportación CAD, publicación en Netlify Drop y GitHub Pages, y checklist de QA móvil).
 
 ---
