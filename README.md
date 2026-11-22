@@ -22,6 +22,8 @@
   &nbsp;·&nbsp;
   <a href="https://boton-mercadona-3d.netlify.app/?demo=cama">🛏️ Cama 3D</a>
   &nbsp;·&nbsp;
+  <a href="https://boton-mercadona-3d.netlify.app/?demo=ondas&pal=verde">🟢🟠 Edición Mercadona</a>
+  &nbsp;·&nbsp;
   <a href="https://boton-mercadona-3d.netlify.app/?demo=ondas&pal=cyberpunk">🎨 Colores + Ondas</a>
   &nbsp;·&nbsp;
   <a href="https://boton-mercadona-3d.netlify.app/ar.html">📱 Ver en AR</a>
@@ -79,25 +81,31 @@ Además de la broma, este repositorio tiene un fin **divulgativo y didáctico**:
 
 ---
 
-### 5. Configurador de colores en vivo + Ondas acústicas 3D + Tu propio MP3
-[![Configurador de colores Cyberpunk y ondas de sonido 3D](capturas/08_colores_y_ondas_sonido.png)](https://boton-mercadona-3d.netlify.app/?demo=ondas&pal=cyberpunk)
-*👉 [Probar Colores y Ondas 3D en vivo](https://boton-mercadona-3d.netlify.app/?demo=ondas&pal=cyberpunk) · 6 paletas instantáneas + 4 selectores de color libre para previsualizar filamentos, ondas sonoras 3D saliendo por las 5 ranuras del altavoz y botón **`🎵 Tu MP3`** (100% local en tu dispositivo).*
+### 5. Edición "Colores Mercadona" (Verde y Naranja) + Ondas acústicas 3D
+[![Pulsador 3D con paleta de colores Mercadona y ondas sonoras](capturas/10_colores_mercadona.png)](https://boton-mercadona-3d.netlify.app/?demo=ondas&pal=verde)
+*👉 [Probar Edición Mercadona en vivo](https://boton-mercadona-3d.netlify.app/?demo=ondas&pal=verde) · Paleta **Verde Mercadona (`#007a33`) + Naranja (`#f97316`) + Plata**, mostrando el pulsador presionado (`CONTACTO CERRADO 8 mm`) con las ondas acústicas 3D saliendo por las 5 ranuras del altavoz.*
 
 ---
 
-### 6. Vista "Cama de Impresión (Z = 0)" estilo laminador
+### 6. Configurador de colores en vivo + Tu propio MP3
+[![Configurador de colores Cyberpunk y ondas de sonido 3D](capturas/08_colores_y_ondas_sonido.png)](https://boton-mercadona-3d.netlify.app/?demo=ondas&pal=cyberpunk)
+*👉 [Probar Colores y Ondas 3D en vivo](https://boton-mercadona-3d.netlify.app/?demo=ondas&pal=cyberpunk) · 6 paletas instantáneas + 4 selectores de color libre para previsualizar filamentos antes de imprimir y botón **`🎵 Tu MP3`** (100% local en tu dispositivo).*
+
+---
+
+### 7. Vista "Cama de Impresión (Z = 0)" estilo laminador
 [![Vista de todas las piezas en cama de impresión Z=0](capturas/07_cama_impresion_3d.png)](https://boton-mercadona-3d.netlify.app/?demo=cama)
 *👉 [Probar Vista Cama 3D en vivo](https://boton-mercadona-3d.netlify.app/?demo=cama) · Coloca automáticamente todas las piezas imprimibles planas sobre una cama virtual de `256 × 256 mm` para comprobar su orientación sin soportes.*
 
 ---
 
-### 7. Realidad Aumentada (AR en tu mesa) y Pegatina QR para el regalo
+### 8. Realidad Aumentada (AR en tu mesa) y Pegatina QR para el regalo
 [![Ventana de Realidad Aumentada AR y Código QR](capturas/09_ar_y_codigo_qr.png)](https://boton-mercadona-3d.netlify.app/ar.html)
 *👉 [Abrir pantalla AR directa (tamaño real 10×10 cm)](https://boton-mercadona-3d.netlify.app/ar.html) · Usa Google `<model-viewer>` (WebXR + Android ARCore `.glb` + iPhone Quick Look `.usdz`), con QR directo a la cámara AR y la **[pegatina QR del regalo (SVG)](recursos/qr_regalo_boton_3d.svg)** lista para imprimir y pegar bajo la base física.*
 
 ---
 
-### 8. Ficha de Electrónica real (`VER`) y experiencia nativa en Móvil
+### 9. Ficha de Electrónica real (`VER`) y experiencia nativa en Móvil
 | Ficha con medidas reales (`VER`) | Vista nativa en móvil (Android e iPhone) |
 | :---: | :---: |
 | [![Ventana flotante de electrónica real con medidas](capturas/05_electronica_medidas.png)](https://boton-mercadona-3d.netlify.app/?demo=electronica) | <a href="https://boton-mercadona-3d.netlify.app/"><img src="capturas/06_vista_movil.png" alt="Vista móvil" width="235" /></a> |
@@ -152,12 +160,14 @@ Todos los archivos CAD y de malla han sido verificados como **mallas 2-manifold 
 ```text
 BOTON_3D_INTERACTIVO/
 ├── index.html          ← Visor 3D universal (PC + Android + iPhone, 100% autocontenido + OG card)
+├── ar.html             ← Pantalla dedicada 1-clic de Realidad Aumentada (WebXR + ARCore + Quick Look)
+├── _headers            ← Cabeceras MIME para Netlify (.glb y .usdz)
 ├── manifest.json       ← Manifiesto PWA para instalación en móvil como app
 ├── README.md           ← Presentación visual, BOM y guía didáctica del proyecto
 ├── GUIA_PROYECTO.md    ← Manual técnico detallado para futuros proyectos
 ├── stl.zip             ← Paquete con todos los archivos .STL imprimibles
 ├── ar/                 ← Modelos a escala real para Realidad Aumentada (.glb Android y .usdz iPhone)
-├── capturas/           ← 9 capturas reales del visor en PC y móvil
+├── capturas/           ← 10 capturas reales del visor en PC y móvil (incl. Edición Mercadona)
 ├── step/               ← Los 7 modelos CAD paramétricos (.STEP AP214)
 ├── stl/                ← Los 10 archivos .STL individuales listos para laminar
 └── recursos/           ← Fotos reales de la electrónica, pegatina QR imprimible (.svg), boceto y MP3
@@ -165,7 +175,7 @@ BOTON_3D_INTERACTIVO/
 
 ---
 
-## 👨💻 Autor de la versión mejorada
+## 👨💻 Autor
 
 **Jose Manuel Caamaño González** | Arquitecto Técnico & BIM Manager  
 Digital Product Lead | ConTech & Digital Twin SaaS | Data Analytics (SQL, Power BI)  
