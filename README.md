@@ -162,3 +162,14 @@ BOTON_3D_INTERACTIVO/
 ├── stl/                ← Los 10 archivos .STL individuales listos para laminar
 └── recursos/           ← Fotos reales de la electrónica, pegatina QR imprimible (.svg), boceto y MP3
 ```
+
+---
+
+## 👨💻 Autor de la versión mejorada
+
+**Jose Manuel Caamaño González** | Arquitecto Técnico & BIM Manager  
+Digital Product Lead | ConTech & Digital Twin SaaS | Data Analytics (SQL, Power BI)  
+
+Hecho con código y café desde A Coruña. ☕  
+[LinkedIn](https://www.linkedin.com/in/jmcaamanog/) · [Web Personal](https://jmcaamanog.com)
+
