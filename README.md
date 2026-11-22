@@ -24,7 +24,7 @@
   &nbsp;·&nbsp;
   <a href="https://boton-mercadona-3d.netlify.app/?demo=ondas&pal=cyberpunk">🎨 Colores + Ondas</a>
   &nbsp;·&nbsp;
-  <a href="https://boton-mercadona-3d.netlify.app/?demo=ar">📱 Ver en AR</a>
+  <a href="https://boton-mercadona-3d.netlify.app/ar.html">📱 Ver en AR</a>
   &nbsp;·&nbsp;
   <a href="./stl.zip">📦 Descargar STL (.zip)</a>
 </p>
@@ -92,8 +92,8 @@ Además de la broma, este repositorio tiene un fin **divulgativo y didáctico**:
 ---
 
 ### 7. Realidad Aumentada (AR en tu mesa) y Pegatina QR para el regalo
-[![Ventana de Realidad Aumentada AR y Código QR](capturas/09_ar_y_codigo_qr.png)](https://boton-mercadona-3d.netlify.app/?demo=ar)
-*👉 [Abrir AR y QR en vivo](https://boton-mercadona-3d.netlify.app/?demo=ar) · Lanza AR nativa a escala real `10 × 10 × 10,2 cm` en **Android (ARCore `.glb`)** y **iPhone (Quick Look `.usdz`)**, e incluye la **[pegatina QR lista para imprimir (SVG)](recursos/qr_regalo_boton_3d.svg)** para pegar bajo la base del regalo físico.*
+[![Ventana de Realidad Aumentada AR y Código QR](capturas/09_ar_y_codigo_qr.png)](https://boton-mercadona-3d.netlify.app/ar.html)
+*👉 [Abrir pantalla AR directa (tamaño real 10×10 cm)](https://boton-mercadona-3d.netlify.app/ar.html) · Usa Google `<model-viewer>` (WebXR + Android ARCore `.glb` + iPhone Quick Look `.usdz`), con QR directo a la cámara AR y la **[pegatina QR del regalo (SVG)](recursos/qr_regalo_boton_3d.svg)** lista para imprimir y pegar bajo la base física.*
 
 ---
 

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f1218" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>Realidad Aumentada (AR) — Botón Musical 3D (10×10 cm)</title>
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="📱 Ver en tu mesa (AR) — Botón Musical 3D" />
+  <meta property="og:description" content="Abre la cámara de tu móvil y coloca el botón musical 3D a tamaño real (10 × 10 × 10,2 cm) sobre tu mesa." />
+  <meta property="og:image" content="https://boton-mercadona-3d.netlify.app/capturas/01_conjunto_3d.png" />
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      height: 100dvh;
+      background: #0f1218;
+      color: #f1f5f9;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      padding: max(10px, env(safe-area-inset-top)) 14px 10px 14px;
+      background: #171b24;
+      border-bottom: 1px solid #2a3140;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+    .badge3d {
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #d92323, #f5b700);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 12px;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .title {
+      font-size: 14px;
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .subtitle {
+      font-size: 11px;
+      color: #94a3b8;
+    }
+    .back-btn {
+      text-decoration: none;
+      color: #f1f5f9;
+      background: #0f1218;
+      border: 1px solid #2a3140;
+      padding: 7px 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+    .stage {
+      position: relative;
+      flex: 1;
+      min-height: 0;
+      width: 100%;
+    }
+    model-viewer {
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 50% 42%, #1d2433 0%, #0f1218 75%);
+      --poster-color: transparent;
+    }
+    .ar-cta {
+      position: absolute;
+      left: 50%;
+      bottom: max(18px, env(safe-area-inset-bottom));
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #f5b700, #fbbf24);
+      color: #0f172a;
+      border: none;
+      border-radius: 999px;
+      padding: 14px 24px;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      box-shadow: 0 10px 30px rgba(245, 183, 0, 0.42);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      z-index: 20;
+    }
+    .ar-cta:active { transform: translateX(-50%) scale(0.97); }
+    .hint-bar {
+      padding: 10px 14px max(12px, env(safe-area-inset-bottom)) 14px;
+      background: #171b24;
+      border-top: 1px solid #2a3140;
+      font-size: 12px;
+      color: #cbd5e1;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+    .steps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 14px;
+      font-size: 11.5px;
+      color: #94a3b8;
+    }
+    .steps b { color: #f5b700; }
+    .fallback-row {
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: 8px;
+      background: rgba(245, 183, 0, 0.12);
+      border: 1px solid rgba(245, 183, 0, 0.45);
+      color: #fde68a;
+      font-size: 11.5px;
+    }
+    .fallback-row.show { display: flex; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="badge3d">AR</div>
+      <div style="min-width:0">
+        <div class="title">Realidad Aumentada · Tamaño Real</div>
+        <div class="subtitle">Escala 1:1 · 10 × 10 × 10,2 cm</div>
+      </div>
+    </div>
+    <a class="back-btn" href="index.html">← Visor 3D</a>
+  </header>
+
+  <main class="stage">
+    <model-viewer
+      id="mv"
+      src="ar/boton_musical_3d.glb"
+      ios-src="ar/boton_musical_3d.usdz"
+      alt="Botón de Emergencia Musical 3D a escala real 10x10 cm"
+      ar
+      ar-modes="webxr scene-viewer quick-look"
+      ar-scale="fixed"
+      camera-controls
+      touch-action="pan-y"
+      auto-rotate
+      shadow-intensity="1"
+      exposure="1.05"
+      camera-orbit="-38deg 66deg 0.34m"
+      min-camera-orbit="auto auto 0.16m"
+      max-camera-orbit="auto auto 0.75m"
+    >
+      <button slot="ar-button" id="arLaunchBtn" class="ar-cta">
+        <span>📷</span>
+        <span>VER EN TU MESA (AR)</span>
+      </button>
+    </model-viewer>
+  </main>
+
+  <footer class="hint-bar">
+    <div id="arFallbackNote" class="fallback-row">
+      <span>ℹ️ En este navegador/dispositivo no se detectó cámara AR (en Android usa <b>Chrome</b> con <i>Servicios de Google Play para RA</i>; en iPhone usa <b>Safari</b>). Puedes girar el 3D aquí arriba.</span>
+    </div>
+    <div class="steps">
+      <span><b>1.</b> Pulsa <b>VER EN TU MESA (AR)</b></span>
+      <span><b>2.</b> Apunta la cámara a una mesa iluminada y mueve el móvil despacio</span>
+      <span><b>3.</b> Toca la pantalla para apoyar el botón a escala real 10×10 cm</span>
+    </div>
+  </footer>
+
+  <script>
+    const mv = document.getElementById("mv");
+    const note = document.getElementById("arFallbackNote");
+    // After model loads, check if device/browser supports AR; if not (e.g. PC or WhatsApp WebView), explain clearly!
+    mv.addEventListener("load", () => {
+      setTimeout(() => {
+        if (typeof mv.canActivateAR === "boolean" && !mv.canActivateAR) {
+          note.classList.add("show");
+        }
+      }, 600);
+    });
+  </script>
+</body>
+</html>
