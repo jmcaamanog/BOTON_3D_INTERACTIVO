@@ -28,6 +28,8 @@
   &nbsp;·&nbsp;
   <a href="https://boton-mercadona-3d.netlify.app/ar.html">📱 Ver en AR</a>
   &nbsp;·&nbsp;
+  <a href="https://boton-mercadona-3d.netlify.app/?demo=historia">📖 Historia del proyecto</a>
+  &nbsp;·&nbsp;
   <a href="./stl.zip">📦 Descargar STL (.zip)</a>
 </p>
 
@@ -37,9 +39,22 @@
 
 Todo empezó como **una broma para hacer un regalo original**: fabricar un botón industrial de emergencia de `100 × 100 × 102 mm` (impreso en 3D multicolor) que, al pulsarlo, **suene la mítica canción de Mercadona** usando un módulo de sonido grabable de 8 MB comprado online.
 
-Además de la broma, este repositorio tiene un fin **divulgativo y didáctico**: demostrar que hoy cualquiera —**sin instalar Fusion 360, Blender ni SolidWorks, y sin conocimientos previos de programación**— puede partir de unas simples fotos con medidas de una placa electrónica y acabar con:
+Además de la broma, este repositorio tiene un fin **divulgativo y didáctico**: demostrar que hoy cualquiera —**sin instalar Fusion 360, Blender ni SolidWorks, y sin conocimientos previos de programación**— puede partir de una simple idea y una imagen conceptual generada con IA para acabar con:
 1. **Piezas mecánicas 3D reales y verificadas (`.STEP` y `.STL` cerrados *watertight*)** adaptadas al milímetro a la electrónica real.
-2. **Un visor 3D profesional en un solo archivo `index.html`** con montaje animado paso a paso, sonido integrado (¡y probador con tu propio MP3!), corte macizo arrastrable, modo Rayos X, configurador de colores en vivo, vista de cama de impresión, **Realidad Aumentada (AR)** y descarga directa de piezas listas para imprimir.
+2. **Un visor 3D profesional en un solo archivo `index.html`** con montaje animado paso a paso, sonido integrado (¡y probador con tu propio MP3!), corte macizo arrastrable, modo Rayos X, configurador de colores en vivo, vista de cama de impresión, **Realidad Aumentada (AR)**, descarga directa de piezas listas para imprimir y un botón **`ℹ️ Historia`** dentro de la propia web que cuenta todo el proceso paso a paso.
+
+---
+
+## 🌱 El origen: todo nació de esta única imagen generada por IA
+
+Antes de existir una sola pieza 3D, un solo archivo `.STL` o una sola línea de código, **todo el proyecto nació de esta única imagen generada por Inteligencia Artificial** a partir de la idea de crear un botón de broma inspirado en un pulsador industrial de emergencia real:
+
+<p align="center">
+  <img src="original/IMG-20261123-WA0003.jpg" alt="Imagen conceptual original generada por IA de la que nació todo el proyecto" width="760" />
+</p>
+
+> **¿Ves los detalles que delatan que era solo un concepto IA?** Fíjate en la leyenda repetida *"EN CASO DE **DE** EMERGENCIA **EN**"* o en el mecanismo interior puramente ilustrativo e imposible de montar tal cual.
+> A partir de **esta única imagen** (más 3 fotos reales del módulo de sonido de 8 MB) y conversando con IA, se transformó la idea en un producto completo real: se corrigió el relieve tipográfico, se modelaron **10 piezas CAD cerradas e imprimibles al milímetro**, se construyó la **web interactiva 3D con sonido y personalización de colores**, y se generó la versión de **Realidad Aumentada a tamaño real (`10 × 10 × 10,2 cm`)**.
 
 ---
 
@@ -47,7 +62,7 @@ Además de la broma, este repositorio tiene un fin **divulgativo y didáctico**:
 
 | Paso | Qué aportó el humano | Qué generó y verificó la IA |
 | :--- | :--- | :--- |
-| **1. Idea y fotos reales** | Una foto de inspiración ([boton.jpeg](recursos/boton.jpeg)), la canción MP3 y 3 fotos de Amazon con las cotas reales del módulo de 8 MB. | Extracción exacta de cotas (`PCB 47×25 mm`, `Altavoz Ø35 mm`, `LiPo 30×20×5 mm`, `Pulsador 12×12 mm`). |
+| **1. Idea e imagen IA original** | La idea de la broma, la imagen conceptual generada por IA ([IMG-20261123-WA0003.jpg](original/IMG-20261123-WA0003.jpg)), la canción MP3 y 3 fotos con las cotas reales del módulo de 8 MB. | Extracción exacta de cotas (`PCB 47×25 mm`, `Altavoz Ø35 mm`, `LiPo 30×20×5 mm`, `Pulsador 12×12 mm`). |
 | **2. Rediseño CAD 3D** | Requisitos claros en lenguaje natural: *"que quepa todo, se pueda cargar por USB-C desde fuera, añadir iconos en relieve, aleta ON/OFF y 4 tuercas"*. | Generación paramétrica de sólidos `.STEP` y `.STL` con holguras de impresión (`+0.3/+0.8 mm`) y validación topológica 100% *watertight* (`0` huecos). |
 | **3. Visor 3D WebGL interactivo** | Peticiones de experiencia visual: corte macizo con plano arrastrable, Rayos X, orden exacto de montaje, colores, ondas sonoras, cama 3D y botón `VER`. | Programación en WebGL 1.0 + GLSL (Stencil Buffer, Raycasting, generador binario STL en navegador) todo en 1 archivo offline. |
 | **4. AR, QR y QA Multiplataforma** | *"Quiero poder mandárselo a amigos en móvil con sonido y todo, y que quede bien guardado."* | Modelos AR nativos (`.glb` + `.usdz`), código QR imprimible, diseño adaptable PC/Android/iPhone y pruebas automatizadas en resoluciones reales. |
@@ -113,6 +128,12 @@ Además de la broma, este repositorio tiene un fin **divulgativo y didáctico**:
 
 ---
 
+### 10. Historia interactiva integrada en la propia web (`ℹ️ Historia`)
+[![Modal interactivo de la historia completa del proyecto dentro de la web](capturas/11_historia_del_proyecto.png)](https://boton-mercadona-3d.netlify.app/?demo=historia)
+*👉 [Abrir la Historia interactiva en vivo](https://boton-mercadona-3d.netlify.app/?demo=historia) · Relato visual paso a paso desde la imagen IA original hasta el CAD 3D, los colores, el sonido y la Realidad Aumentada, con zoom en cada imagen y botones para saltar en directo a cada función del visor.*
+
+---
+
 ## 🛒 Lista de materiales (BOM) y presupuesto estimado
 
 | Componente | Especificación exacta | Coste aprox. |
@@ -167,10 +188,11 @@ BOTON_3D_INTERACTIVO/
 ├── GUIA_PROYECTO.md    ← Manual técnico detallado para futuros proyectos
 ├── stl.zip             ← Paquete con todos los archivos .STL imprimibles
 ├── ar/                 ← Modelos a escala real para Realidad Aumentada (.glb Android y .usdz iPhone)
-├── capturas/           ← 10 capturas reales del visor en PC y móvil (incl. Edición Mercadona)
+├── original/           ← Imagen conceptual original generada por IA de la que nació el proyecto
+├── capturas/           ← Capturas reales del visor en PC y móvil (incl. Edición Mercadona e Historia)
 ├── step/               ← Los 7 modelos CAD paramétricos (.STEP AP214)
 ├── stl/                ← Los 10 archivos .STL individuales listos para laminar
-└── recursos/           ← Fotos reales de la electrónica, pegatina QR imprimible (.svg), boceto y MP3
+└── recursos/           ← Fotos reales de la electrónica, pegatina QR imprimible (.svg) y MP3
 ```
 
 ---

@@ -21,8 +21,8 @@ boton_mercadona/
 │   ├── 5_soporte_pulsador_interior.step
 │   └── 6_muelle_imprimible.step
 ├── stl/                ← Los 10 archivos .STL individuales listos para laminar (PLA/PETG)
-└── recursos/           ← Material original de referencia (fotos, medidas y audio)
-    ├── boton.jpeg
+├── original/           ← Imagen conceptual original generada por IA de la que nació el proyecto
+└── recursos/           ← Material original de referencia (electrónica real, QR imprimible y audio)
     ├── mercadona_mercadona_cancion.mp3
     └── electronica/    ← Fotos con cotas reales del módulo de sonido 8 MB (LJY-YYH-V1)
 ```

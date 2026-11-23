@@ -170,11 +170,17 @@ Check your Browserslist config to be sure that your targets are set up correctly
     </div>
 
     <div class="flex items-center gap-1.5 shrink-0">
+      <button id="btnStoryModal" class="px-2 py-1.5 md:px-2.5 md:py-1 rounded-lg md:rounded-md text-xs font-semibold border border-[var(--border)] bg-[var(--background)] hover:border-[var(--primary)] hover:text-[var(--primary)] active:scale-95 transition flex items-center gap-1" title="Cómo nació este proyecto: de 1 imagen IA a un botón 3D real">
+        <span>ℹ️</span>
+        <span class="hidden sm:inline">Historia</span>
+        <span class="sm:hidden">Info</span>
+      </button>
+
       <button id="btnAudioStop" class="hidden px-2.5 py-1.5 md:py-1 rounded-lg md:rounded-md text-xs font-medium border border-emerald-500/60 bg-emerald-600/20 text-emerald-300 hover:bg-emerald-600/30 active:scale-95 transition">
         ■ Parar
       </button>
 
-      <button id="btnPress" class="px-4 py-1.5 md:px-3.5 md:py-1 rounded-lg md:rounded-md text-xs font-bold tracking-wide text-white shadow transition active:scale-95 flex items-center gap-1.5" style="background: #d92323;">
+      <button id="btnPress" class="px-3 py-1.5 md:px-3.5 md:py-1 rounded-lg md:rounded-md text-xs font-bold tracking-wide text-white shadow transition active:scale-95 flex items-center gap-1.5" style="background: #d92323;">
         <span id="pressLed" class="w-2 h-2 rounded-full bg-white/90"></span>
         <span>PULSAR</span>
       </button>
@@ -628,6 +634,248 @@ Check your Browserslist config to be sure that your targets are set up correctly
             </div>
           </div>
         </div>
+      </div>
+      <!-- Floating Modal: Historia del Proyecto (De 1 imagen IA a un botón 3D real) -->
+      <div id="storyModal" class="hidden pointer-events-auto absolute inset-0 z-40 flex items-center justify-center p-2.5 sm:p-5 bg-slate-950/80 backdrop-blur-sm">
+        <div id="storyCard" class="w-full max-w-4xl max-h-[93%] bg-[var(--card)] border border-[var(--primary)]/70 rounded-2xl shadow-2xl flex flex-col overflow-hidden">
+          <!-- Sticky Header -->
+          <div class="shrink-0 px-3.5 py-2.5 border-b border-[var(--border)] bg-[var(--card)]/95 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2 min-w-0">
+              <span class="w-6 h-6 rounded-md flex items-center justify-center text-xs font-bold text-slate-950 shrink-0" style="background: linear-gradient(135deg, #f5b700, #fb923c);">📖</span>
+              <div class="min-w-0">
+                <h3 class="text-xs sm:text-sm font-bold leading-tight truncate">Cómo nació este proyecto · De 1 imagen IA a un producto 3D real</h3>
+                <p class="text-[10px] sm:text-[11px] text-[var(--muted-foreground)] truncate">Sin programas de diseño CAD · Sin saber programar · Todo guiado conversando con IA</p>
+              </div>
+            </div>
+            <button id="btnCloseStoryModal" class="w-7 h-7 rounded-lg border border-[var(--border)] bg-[var(--background)] hover:border-red-400 hover:text-red-300 text-xs font-bold flex items-center justify-center shrink-0 transition" title="Cerrar (Esc)">✕</button>
+          </div>
+
+          <!-- Scrollable Narrative Body -->
+          <div id="storyScrollBody" class="p-3.5 sm:p-5 space-y-5 overflow-y-auto overflow-x-hidden thin-scroll text-xs sm:text-[13px] leading-relaxed">
+            <!-- Hero Banner -->
+            <div class="rounded-xl border border-[var(--primary)]/35 bg-gradient-to-br from-amber-500/10 via-[var(--background)] to-red-500/10 p-3.5 sm:p-4 space-y-3">
+              <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[var(--primary)]/15 border border-[var(--primary)]/40 text-[var(--primary)] text-[10px] sm:text-[11px] font-semibold tracking-wide">
+                <span>✨</span>
+                <span>HISTORIA REAL DE CREACIÓN CON INTELIGENCIA ARTIFICIAL</span>
+              </div>
+              <h4 class="text-sm sm:text-base font-bold text-white leading-snug">
+                Todo empezó como una broma para hacer un regalo… y demostró lo lejos que se puede llegar hoy partiendo solo de una idea.
+              </h4>
+              <p class="text-[var(--muted-foreground)]">
+                La premisa era sencilla y divertida: fabricar un botón industrial de emergencia de <b>100 × 100 × 102 mm</b> impreso en 3D que, al pulsarlo, hiciera sonar la mítica canción de Mercadona. Lo sorprendente fue el camino: <b>sin abrir Fusion 360, SolidWorks ni Blender y sin escribir código a mano</b>, a partir de <b>una única imagen generada por IA</b> se construyó todo lo que estás viendo y tocando ahora mismo.
+              </p>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1 text-center">
+                <div class="rounded-lg border border-[var(--border)] bg-[var(--card)]/90 px-2 py-2">
+                  <div class="text-xs sm:text-sm font-bold text-[var(--primary)]">1 imagen IA</div>
+                  <div class="text-[10px] text-[var(--muted-foreground)]">La chispa original</div>
+                </div>
+                <div class="rounded-lg border border-[var(--border)] bg-[var(--card)]/90 px-2 py-2">
+                  <div class="text-xs sm:text-sm font-bold text-emerald-400">10 piezas CAD</div>
+                  <div class="text-[10px] text-[var(--muted-foreground)]">.STEP y .STL imprimibles</div>
+                </div>
+                <div class="rounded-lg border border-[var(--border)] bg-[var(--card)]/90 px-2 py-2">
+                  <div class="text-xs sm:text-sm font-bold text-sky-400">Visor WebGL 3D</div>
+                  <div class="text-[10px] text-[var(--muted-foreground)]">Corte, Rayos X, MP3</div>
+                </div>
+                <div class="rounded-lg border border-[var(--border)] bg-[var(--card)]/90 px-2 py-2">
+                  <div class="text-xs sm:text-sm font-bold text-orange-400">AR Escala 1:1</div>
+                  <div class="text-[10px] text-[var(--muted-foreground)]">En tu mesa con cámara</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Capítulo 1: Imagen Original IA -->
+            <section class="rounded-xl border border-[var(--border)] bg-[var(--background)]/75 p-3.5 sm:p-4 space-y-3">
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded-md bg-[var(--primary)] text-slate-950 font-extrabold text-[11px]">01</span>
+                <h5 class="text-xs sm:text-sm font-bold text-white">El origen: una idea de broma y esta única imagen generada por IA</h5>
+              </div>
+              <p class="text-[var(--muted-foreground)]">
+                Antes de existir una sola pieza 3D ni una sola línea de programación, <b>todo nació de esta imagen conceptual generada por IA</b> inspirada en un botón industrial de emergencia real. Fíjate en los pequeños fallos típicos de la IA generativa —como la leyenda repetida <i>«EN CASO DE <b>DE</b> EMERGENCIA <b>EN</b>»</i> o el mecanismo interno puramente imaginario—: era solo un dibujo bonito… pero fue suficiente para encender la mecha.
+              </p>
+              <figure class="space-y-1.5">
+                <div class="rounded-xl border border-[var(--primary)]/40 bg-white p-2 flex items-center justify-center overflow-hidden">
+                  <img src="original/IMG-20261123-WA0003.jpg" loading="lazy" alt="Imagen conceptual original generada por IA de la que nació todo el proyecto" data-caption="Imagen original generada por IA — El punto de partida exacto de todo el proyecto (clic para ampliar)" class="story-zoom-img max-h-[340px] w-auto object-contain rounded-lg cursor-zoom-in transition hover:scale-[1.01]" onerror="this.closest('figure').classList.add('hidden')" />
+                </div>
+                <figcaption class="text-[11px] text-center text-[var(--muted-foreground)]">
+                  🔍 <b>Imagen conceptual original generada por IA</b> (pulsa en cualquier imagen para ampliarla)
+                </figcaption>
+              </figure>
+            </section>
+
+            <!-- Capítulo 2: Electrónica real al milímetro -->
+            <section class="rounded-xl border border-[var(--border)] bg-[var(--background)]/75 p-3.5 sm:p-4 space-y-3">
+              <div class="flex items-center justify-between gap-2 flex-wrap">
+                <div class="flex items-center gap-2">
+                  <span class="px-2 py-0.5 rounded-md bg-emerald-500 text-slate-950 font-extrabold text-[11px]">02</span>
+                  <h5 class="text-xs sm:text-sm font-bold text-white">De la imagen a la realidad física: la electrónica de 8 MB al milímetro</h5>
+                </div>
+                <button type="button" data-story-action="electronica" class="px-2.5 py-1 rounded-lg border border-emerald-500/50 bg-emerald-500/15 text-emerald-300 hover:bg-emerald-500/25 text-[11px] font-semibold transition">
+                  🔌 Ver electrónica en el visor
+                </button>
+              </div>
+              <p class="text-[var(--muted-foreground)]">
+                Para que el botón sonase de verdad, bastó con pasarle a la IA <b>3 fotos con las cotas reales</b> de un módulo de sonido grabable de 8 MB (~8 €): placa PCB <code>47×25 mm</code> con USB-C e interruptor ON/OFF, altavoz <code>Ø35 mm</code>, batería LiPo <code>30×20×5 mm</code> y pulsador táctil <code>12×12 mm</code>. Con esos datos se diseñó todo el interior con cunas a medida, holguras reales de impresión 3D, ventana USB-C exterior, ranuras acústicas y hasta una aleta clicable para encenderlo sin abrir la caja.
+              </p>
+              <figure class="space-y-1">
+                <img src="capturas/05_electronica_medidas.png" loading="lazy" alt="Ficha de electrónica real con medidas integradas en el visor 3D" data-caption="Medidas reales del módulo grabable de 8 MB integradas dentro de la carcasa 3D" class="story-zoom-img w-full rounded-lg border border-[var(--border)] cursor-zoom-in hover:border-[var(--primary)]/70 transition" onerror="this.closest('figure').classList.add('hidden')" />
+                <figcaption class="text-[11px] text-[var(--muted-foreground)]">Electrónica real modelada e integrada dentro de la caja con acceso USB-C externo.</figcaption>
+              </figure>
+            </section>
+
+            <!-- Capítulo 3: Modelado CAD 3D imprimible -->
+            <section class="rounded-xl border border-[var(--border)] bg-[var(--background)]/75 p-3.5 sm:p-4 space-y-3">
+              <div class="flex items-center justify-between gap-2 flex-wrap">
+                <div class="flex items-center gap-2">
+                  <span class="px-2 py-0.5 rounded-md bg-amber-400 text-slate-950 font-extrabold text-[11px]">03</span>
+                  <h5 class="text-xs sm:text-sm font-bold text-white">Piezas CAD 3D reales listas para imprimir (sin programas de CAD)</h5>
+                </div>
+                <div class="flex items-center gap-1.5 flex-wrap">
+                  <button type="button" data-story-action="despiece" class="px-2.5 py-1 rounded-lg border border-[var(--primary)]/50 bg-[var(--primary)]/15 text-[var(--primary)] hover:bg-[var(--primary)]/25 text-[11px] font-semibold transition">
+                    💥 Probar Despiece
+                  </button>
+                  <button type="button" data-story-action="cama" class="px-2.5 py-1 rounded-lg border border-sky-500/50 bg-sky-500/15 text-sky-300 hover:bg-sky-500/25 text-[11px] font-semibold transition">
+                    🛏️ Ver Cama 3D
+                  </button>
+                </div>
+              </div>
+              <p class="text-[var(--muted-foreground)]">
+                Pidiendo cambios en lenguaje natural, la IA corrigió la leyenda en relieve (<i>«EN CASO DE EMERGENCIA · PRESIONAR»</i>) y generó <b>10 piezas mecánicas cerradas (watertight)</b> en formato <code>.STEP</code> y <code>.STL</code>: base con iconos en relieve, tapa amarilla, seta roja con flechas, cuello estriado dorado, clip en C, 4 tornillos con sus 4 tuercas, soporte elástico del pulsador y un <b>muelle imprimible en 3D</b>. Incluso incluye una vista de <b>Cama de Impresión (Z = 0)</b> para ver todas las piezas planas sin soportes.
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                <figure class="space-y-1">
+                  <img src="capturas/01_conjunto_3d.png" loading="lazy" alt="Conjunto 3D completo ya modelado" data-caption="Conjunto 3D final con la leyenda corregida y tornillería completa" class="story-zoom-img w-full rounded-lg border border-[var(--border)] cursor-zoom-in hover:border-[var(--primary)]/70 transition" onerror="this.closest('figure').classList.add('hidden')" />
+                  <figcaption class="text-[10px] text-[var(--muted-foreground)]">Conjunto final y texto corregido</figcaption>
+                </figure>
+                <figure class="space-y-1">
+                  <img src="capturas/04_despiece_y_cotas.png" loading="lazy" alt="Despiece completo y cotas CAD en 3D" data-caption="Despiece mecánico progresivo y cotas CAD reales en milímetros" class="story-zoom-img w-full rounded-lg border border-[var(--border)] cursor-zoom-in hover:border-[var(--primary)]/70 transition" onerror="this.closest('figure').classList.add('hidden')" />
+                  <figcaption class="text-[10px] text-[var(--muted-foreground)]">Despiece y cotas CAD reales</figcaption>
+                </figure>
+                <figure class="space-y-1">
+                  <img src="capturas/07_cama_impresion_3d.png" loading="lazy" alt="Piezas colocadas en cama de impresión virtual Z=0" data-caption="Todas las piezas apoyadas en cama de impresión 256×256 mm (Z = 0)" class="story-zoom-img w-full rounded-lg border border-[var(--border)] cursor-zoom-in hover:border-[var(--primary)]/70 transition" onerror="this.closest('figure').classList.add('hidden')" />
+                  <figcaption class="text-[10px] text-[var(--muted-foreground)]">Cama de impresión 256×256 mm</figcaption>
+                </figure>
+              </div>
+            </section>
+
+            <!-- Capítulo 4: Ingeniería WebGL interactiva -->
+            <section class="rounded-xl border border-[var(--border)] bg-[var(--background)]/75 p-3.5 sm:p-4 space-y-3">
+              <div class="flex items-center justify-between gap-2 flex-wrap">
+                <div class="flex items-center gap-2">
+                  <span class="px-2 py-0.5 rounded-md bg-sky-400 text-slate-950 font-extrabold text-[11px]">04</span>
+                  <h5 class="text-xs sm:text-sm font-bold text-white">Ingeniería interactiva en una web: Corte 3D macizo, Rayos X y Montaje</h5>
+                </div>
+                <div class="flex items-center gap-1.5 flex-wrap">
+                  <button type="button" data-story-action="corte" class="px-2.5 py-1 rounded-lg border border-sky-500/50 bg-sky-500/15 text-sky-300 hover:bg-sky-500/25 text-[11px] font-semibold transition">
+                    ✂️ Probar Corte 3D
+                  </button>
+                  <button type="button" data-story-action="rayosx" class="px-2.5 py-1 rounded-lg border border-purple-500/50 bg-purple-500/15 text-purple-300 hover:bg-purple-500/25 text-[11px] font-semibold transition">
+                    ☢️ Probar Rayos X
+                  </button>
+                </div>
+              </div>
+              <p class="text-[var(--muted-foreground)]">
+                En lugar de dejar el modelo encerrado en archivos estáticos, se programó un <b>visor 3D WebGL completo</b> capaz de hacer <b>secciones macizas en vivo</b> por los ejes X, Y o Z arrastrando un plano 3D, activar un <b>modo Rayos X</b> (lupa interactiva o holograma completo) para verificar cómo encaja cada cable y tornillo, medir entre dos puntos con regla CAD, ver el montaje animado en 7 pasos y descargar cualquier pieza en <code>.STL</code> directo desde el navegador.
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                <figure class="space-y-1">
+                  <img src="capturas/02_corte_3d_macizo.png" loading="lazy" alt="Corte 3D macizo por el puerto USB-C" data-caption="Corte 3D macizo con rayado CAD 45°, plano arrastrable y cable USB-C enchufado" class="story-zoom-img w-full rounded-lg border border-[var(--border)] cursor-zoom-in hover:border-[var(--primary)]/70 transition" onerror="this.closest('figure').classList.add('hidden')" />
+                  <figcaption class="text-[10px] text-[var(--muted-foreground)]">Corte 3D macizo (rayado 45°) + simulación USB-C</figcaption>
+                </figure>
+                <figure class="space-y-1">
+                  <img src="capturas/03_modo_rayos_x.png" loading="lazy" alt="Modo Rayos X holográfico mostrando el interior" data-caption="Modo Rayos X holográfico dejando ver el muelle, los tornillos y toda la electrónica" class="story-zoom-img w-full rounded-lg border border-[var(--border)] cursor-zoom-in hover:border-[var(--primary)]/70 transition" onerror="this.closest('figure').classList.add('hidden')" />
+                  <figcaption class="text-[10px] text-[var(--muted-foreground)]">Modo Rayos X holográfico e inspección interna</figcaption>
+                </figure>
+              </div>
+            </section>
+
+            <!-- Capítulo 5: Colores, Edición Mercadona, Sonidos y Ondas 3D -->
+            <section class="rounded-xl border border-[var(--border)] bg-[var(--background)]/75 p-3.5 sm:p-4 space-y-3">
+              <div class="flex items-center justify-between gap-2 flex-wrap">
+                <div class="flex items-center gap-2">
+                  <span class="px-2 py-0.5 rounded-md bg-green-500 text-slate-950 font-extrabold text-[11px]">05</span>
+                  <h5 class="text-xs sm:text-sm font-bold text-white">Colores en vivo (Edición Mercadona), ondas acústicas 3D y tu propio MP3</h5>
+                </div>
+                <div class="flex items-center gap-1.5 flex-wrap">
+                  <button type="button" data-story-action="mercadona" class="px-2.5 py-1 rounded-lg border border-green-500/50 bg-green-500/15 text-green-300 hover:bg-green-500/25 text-[11px] font-semibold transition">
+                    🟢🟠 Probar Mercadona
+                  </button>
+                  <button type="button" data-story-action="cyberpunk" class="px-2.5 py-1 rounded-lg border border-pink-500/50 bg-pink-500/15 text-pink-300 hover:bg-pink-500/25 text-[11px] font-semibold transition">
+                    🎨 Probar Cyberpunk
+                  </button>
+                  <button type="button" data-story-action="pulsar" class="px-2.5 py-1 rounded-lg border border-red-500/50 bg-red-500/20 text-red-200 hover:bg-red-500/30 text-[11px] font-semibold transition">
+                    🔊 Pulsar ahora
+                  </button>
+                </div>
+              </div>
+              <p class="text-[var(--muted-foreground)]">
+                ¿Cómo quedaría el regalo impreso con los <b>colores oficiales de Mercadona</b> (verde y naranja) o en estilo Cyberpunk? El configurador permite probar <b>6 paletas instantáneas o elegir 4 colores libres</b> en tiempo real antes de gastar filamento. Al pulsar la seta, el botón baja 8 mm, comprime el muelle, lanza <b>ondas sonoras 3D por las ranuras del altavoz</b> y reproduce la canción — ¡o cualquier <code>.mp3</code> que cargues desde tu propio dispositivo con <b>🎵 Tu MP3</b>!
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                <figure class="space-y-1">
+                  <img src="capturas/10_colores_mercadona.png" loading="lazy" alt="Botón 3D con paleta Edición Mercadona y ondas sonoras" data-caption="Edición Colores Mercadona (Verde #007a33 + Naranja #f97316 + Plata) con ondas acústicas 3D" class="story-zoom-img w-full rounded-lg border border-[var(--border)] cursor-zoom-in hover:border-[var(--primary)]/70 transition" onerror="this.closest('figure').classList.add('hidden')" />
+                  <figcaption class="text-[10px] text-[var(--muted-foreground)]">Edición Colores Mercadona + ondas sonoras 3D</figcaption>
+                </figure>
+                <figure class="space-y-1">
+                  <img src="capturas/08_colores_y_ondas_sonido.png" loading="lazy" alt="Configurador de colores Cyberpunk en vivo" data-caption="Configurador libre de filamentos: paleta Cyberpunk y probador de MP3 local" class="story-zoom-img w-full rounded-lg border border-[var(--border)] cursor-zoom-in hover:border-[var(--primary)]/70 transition" onerror="this.closest('figure').classList.add('hidden')" />
+                  <figcaption class="text-[10px] text-[var(--muted-foreground)]">Paletas instantáneas + 4 selectores de color libre</figcaption>
+                </figure>
+              </div>
+            </section>
+
+            <!-- Capítulo 6: Móvil y Realidad Aumentada -->
+            <section class="rounded-xl border border-[var(--border)] bg-[var(--background)]/75 p-3.5 sm:p-4 space-y-3">
+              <div class="flex items-center justify-between gap-2 flex-wrap">
+                <div class="flex items-center gap-2">
+                  <span class="px-2 py-0.5 rounded-md bg-orange-400 text-slate-950 font-extrabold text-[11px]">06</span>
+                  <h5 class="text-xs sm:text-sm font-bold text-white">Del ordenador a cualquier móvil… y a tu mesa en Realidad Aumentada</h5>
+                </div>
+                <button type="button" data-story-action="ar" class="px-2.5 py-1 rounded-lg border border-[var(--primary)]/60 bg-[var(--primary)]/15 text-[var(--primary)] hover:bg-[var(--primary)]/25 text-[11px] font-semibold transition">
+                  📱 Abrir Realidad Aumentada
+                </button>
+              </div>
+              <p class="text-[var(--muted-foreground)]">
+                Como último salto, todo se adaptó para compartirse en un clic por WhatsApp (con control táctil, sonido y vibración en Android/iPhone), se generó una <b>pegatina QR imprimible</b> para pegar bajo la base física del regalo y se exportaron modelos nativos <code>.GLB</code> y <code>.USDZ</code> para colocar el botón a <b>tamaño real (10 × 10 × 10,2 cm)</b> sobre tu propia mesa con la cámara del móvil.
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 items-center">
+                <figure class="sm:col-span-2 space-y-1">
+                  <img src="capturas/09_ar_y_codigo_qr.png" loading="lazy" alt="Ventana de Realidad Aumentada AR y Código QR directo" data-caption="Realidad Aumentada (WebXR + Android ARCore + iPhone Quick Look) y pegatina QR imprimible" class="story-zoom-img w-full rounded-lg border border-[var(--border)] cursor-zoom-in hover:border-[var(--primary)]/70 transition" onerror="this.closest('figure').classList.add('hidden')" />
+                  <figcaption class="text-[10px] text-[var(--muted-foreground)]">Lanzador AR en tu mesa + código QR directo</figcaption>
+                </figure>
+                <figure class="space-y-1 flex flex-col items-center">
+                  <img src="capturas/06_vista_movil.png" loading="lazy" alt="Experiencia nativa en teléfono móvil" data-caption="Interfaz adaptable nativa en Android e iPhone con sonido y vibración háptica" class="story-zoom-img max-h-[240px] w-auto rounded-xl border border-[var(--border)] cursor-zoom-in hover:border-[var(--primary)]/70 transition" onerror="this.closest('figure').classList.add('hidden')" />
+                  <figcaption class="text-[10px] text-center text-[var(--muted-foreground)]">Vista táctil en móvil</figcaption>
+                </figure>
+              </div>
+            </section>
+
+            <!-- Cierre inspirador y autor -->
+            <div class="rounded-xl border border-[var(--border)] bg-slate-900/80 p-3.5 sm:p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+              <div class="space-y-1">
+                <div class="text-xs font-bold text-white">💡 Lo que demuestra este experimento</div>
+                <p class="text-[11px] text-[var(--muted-foreground)] max-w-xl">
+                  Hoy puedes pasar de una simple idea y una foto a piezas 3D reales, una aplicación web interactiva, sonido y Realidad Aumentada sin ser programador ni diseñador CAD. Solo hace falta curiosidad, criterio y atreverse a probar.
+                </p>
+                <div class="pt-1 text-[11px] text-slate-300">
+                  <b>Jose Manuel Caamaño González</b> · A Coruña ☕ ·
+                  <a href="https://github.com/jmcaamanog/BOTON_3D_INTERACTIVO" target="_blank" rel="noopener noreferrer" class="text-[var(--primary)] hover:underline">GitHub</a> ·
+                  <a href="https://www.linkedin.com/in/jmcaamanog/" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:underline">LinkedIn</a> ·
+                  <a href="https://jmcaamanog.com" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline">Web Personal</a>
+                </div>
+              </div>
+              <button id="btnCloseStoryFooter" type="button" class="shrink-0 w-full sm:w-auto px-4 py-2 rounded-lg bg-[var(--primary)] text-slate-950 hover:brightness-110 active:scale-95 text-xs font-bold shadow transition">
+                🚀 Volver al visor 3D
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fullscreen Image Zoom Lightbox for Story Modal -->
+      <div id="storyLightbox" class="hidden pointer-events-auto absolute inset-0 z-50 flex flex-col items-center justify-center p-3 sm:p-6 bg-slate-950/92 backdrop-blur-md cursor-zoom-out">
+        <button id="btnCloseStoryLightbox" class="absolute top-3 right-3 sm:top-5 sm:right-5 w-9 h-9 rounded-full border border-white/25 bg-slate-900/90 text-white hover:border-[var(--primary)] hover:text-[var(--primary)] text-sm font-bold flex items-center justify-center shadow-lg transition" title="Cerrar zoom (Esc)">✕</button>
+        <img id="storyLightboxImg" src="" alt="" class="max-w-full max-h-[82vh] object-contain rounded-xl border border-white/15 shadow-2xl bg-slate-900" />
+        <p id="storyLightboxCap" class="mt-2.5 px-3 py-1.5 rounded-lg bg-slate-900/90 border border-white/10 text-xs text-slate-200 text-center max-w-2xl"></p>
       </div>
       </div>
     </div>
@@ -2913,6 +3161,117 @@ window.ELECTRONICS_PHOTOS = [{"id": "size", "caption": "Medidas exactas del mód
     arQrModalEl.addEventListener("click", e => { if (e.target === arQrModalEl) closeArQrModal(); });
     arQrCardEl.addEventListener("click", e => e.stopPropagation());
 
+    // ---------- Story / Project Info Modal & Image Zoom Lightbox ----------
+    const storyModalEl = document.getElementById("storyModal");
+    const storyCardEl = document.getElementById("storyCard");
+    const storyScrollBodyEl = document.getElementById("storyScrollBody");
+    const storyLightboxEl = document.getElementById("storyLightbox");
+    const storyLightboxImgEl = document.getElementById("storyLightboxImg");
+    const storyLightboxCapEl = document.getElementById("storyLightboxCap");
+
+    function openStoryModal() {
+      if (!storyModalEl) return;
+      storyModalEl.classList.remove("hidden");
+      if (storyScrollBodyEl) storyScrollBodyEl.scrollTop = 0;
+    }
+    function closeStoryModal() {
+      if (storyModalEl) storyModalEl.classList.add("hidden");
+      closeStoryLightbox();
+    }
+    function openStoryLightbox(src, caption) {
+      if (!storyLightboxEl || !storyLightboxImgEl) return;
+      storyLightboxImgEl.src = src;
+      storyLightboxImgEl.alt = caption || "";
+      if (storyLightboxCapEl) storyLightboxCapEl.textContent = caption || "";
+      storyLightboxEl.classList.remove("hidden");
+    }
+    function closeStoryLightbox() {
+      if (storyLightboxEl) storyLightboxEl.classList.add("hidden");
+    }
+
+    document.getElementById("btnStoryModal").addEventListener("click", openStoryModal);
+    document.getElementById("btnCloseStoryModal").addEventListener("click", closeStoryModal);
+    document.getElementById("btnCloseStoryFooter").addEventListener("click", closeStoryModal);
+    storyModalEl.addEventListener("click", e => { if (e.target === storyModalEl) closeStoryModal(); });
+    storyCardEl.addEventListener("click", e => e.stopPropagation());
+
+    document.getElementById("btnCloseStoryLightbox").addEventListener("click", e => {
+      e.stopPropagation();
+      closeStoryLightbox();
+    });
+    storyLightboxEl.addEventListener("click", closeStoryLightbox);
+    storyLightboxImgEl.addEventListener("click", e => {
+      e.stopPropagation();
+      closeStoryLightbox();
+    });
+
+    storyModalEl.querySelectorAll(".story-zoom-img").forEach(img => {
+      img.addEventListener("click", () => {
+        openStoryLightbox(img.getAttribute("src"), img.getAttribute("data-caption") || img.getAttribute("alt") || "");
+      });
+    });
+
+    function runStoryAction(action) {
+      closeStoryModal();
+      // Reset overlapping modes cleanly before jumping to the selected live demo
+      state.printBedMode = false;
+      state.sectionCut = false;
+      state.xrayMode = 0;
+      state.dimsMode = 0;
+      state.explode = 0;
+      state.showLabels = false;
+      document.getElementById("explodeSlider").value = "0";
+      document.getElementById("explodeVal").textContent = "0%";
+      if (action === "electronica") {
+        state.selectedIds.clear();
+        state.selectedIds.add("electronics");
+        state.showElec = true;
+        openElecPhotoModal("size");
+      } else if (action === "despiece") {
+        state.explode = 0.72;
+        state.dimsMode = 1;
+        document.getElementById("explodeSlider").value = "72";
+        document.getElementById("explodeVal").textContent = "72%";
+        state.yaw = -0.74; state.pitch = 0.32; state.dist = 520; state.target = [0, 0, 62];
+      } else if (action === "cama") {
+        state.printBedMode = true;
+        state.yaw = -1.28; state.pitch = 0.88; state.dist = 560; state.target = [10, 12, 14];
+      } else if (action === "corte") {
+        state.sectionCut = true;
+        state.sectionAxis = "y";
+        state.sectionOffset = -11.3;
+        state.sectionFlip = 1.0;
+        state.showUsbPlug = true;
+        state.yaw = 0.92; state.pitch = 0.36; state.dist = 290; state.target = [6, -12, 34];
+      } else if (action === "rayosx") {
+        state.xrayMode = 2;
+        state.showElec = true;
+        state.showUsbPlug = true;
+        state.yaw = -0.52; state.pitch = 0.42; state.dist = 320; state.target = [2, -4, 44];
+      } else if (action === "mercadona") {
+        applyPaletteByName("verde");
+        state.yaw = 0.85; state.pitch = 0.44; state.dist = 330; state.target = [0, 16, 46];
+        triggerButtonPress(true);
+      } else if (action === "cyberpunk") {
+        applyPaletteByName("cyberpunk");
+        state.yaw = 0.85; state.pitch = 0.44; state.dist = 330; state.target = [0, 16, 46];
+        triggerButtonPress(true);
+      } else if (action === "pulsar") {
+        triggerButtonPress(true);
+      } else if (action === "ar") {
+        openArQrModal();
+      }
+      updateAsmButtonUI();
+      updateXrayUI();
+      updateDimsUI();
+      updateSectionUI();
+      renderUI();
+    }
+
+    storyModalEl.querySelectorAll("[data-story-action]").forEach(btn => {
+      btn.addEventListener("click", () => runStoryAction(btn.getAttribute("data-story-action")));
+    });
+
     // ---------- Share Current View Deep-Link ----------
     function buildShareViewUrl() {
       const base = (window.location && window.location.protocol && window.location.protocol.startsWith("http"))
@@ -3236,6 +3595,8 @@ window.ELECTRONICS_PHOTOS = [{"id": "size", "caption": "Medidas exactas del mód
 
     window.addEventListener("keydown", e => {
       if (e.key === "Escape") {
+        if (storyLightboxEl && !storyLightboxEl.classList.contains("hidden")) { closeStoryLightbox(); return; }
+        if (storyModalEl && !storyModalEl.classList.contains("hidden")) { closeStoryModal(); return; }
         if (!elecPhotoModalEl.classList.contains("hidden")) { closeElecPhotoModal(); return; }
         if (!arQrModalEl.classList.contains("hidden")) { closeArQrModal(); return; }
       }
@@ -3978,6 +4339,9 @@ window.ELECTRONICS_PHOTOS = [{"id": "size", "caption": "Medidas exactas del mód
         } else if (demo === "ar") {
           state.yaw = -0.68; state.pitch = 0.40; state.dist = 340; state.showLabels = false;
           openArQrModal();
+        } else if (demo === "historia") {
+          state.yaw = -0.68; state.pitch = 0.40; state.dist = 340; state.showLabels = false;
+          openStoryModal();
         }
         const palParam = new URLSearchParams(window.location ? window.location.search : "").get("pal");
         if (palParam && COLOR_PALETTES[palParam]) {
