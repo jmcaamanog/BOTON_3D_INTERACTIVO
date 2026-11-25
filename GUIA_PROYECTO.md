@@ -11,16 +11,18 @@ boton_mercadona/
 ├── index.html          ← Visor 3D universal (Ordenador + iPhone + Android, 100% offline y listo para web)
 ├── manifest.json       ← Configuración PWA para instalar el visor como app en Android e iPhone
 ├── GUIA_PROYECTO.md    ← Esta guía técnica y de aprendizaje
-├── stl.zip             ← Paquete comprimido con los 10 archivos .STL listos para imprimir
-├── step/               ← Los 7 archivos CAD paramétricos (.STEP AP214) sin duplicar
+├── stl.zip             ← Paquete comprimido con los 11 archivos .STL listos para imprimir
+├── step/               ← Los 8 archivos CAD paramétricos (.STEP AP214) sin duplicar
 │   ├── boton_emergencia_conjunto_completo.step
 │   ├── 1_base_inferior_gris.step
 │   ├── 2_tapa_superior_amarilla.step
 │   ├── 3_boton_seta_rojo.step
 │   ├── 4_cuello_estriado_y_accesorios.step
 │   ├── 5_soporte_pulsador_interior.step
-│   └── 6_muelle_imprimible.step
-├── stl/                ← Los 10 archivos .STL individuales listos para laminar (PLA/PETG)
+│   ├── 6_muelle_imprimible.step
+│   └── 7_tapa_usb_interruptor.step
+├── stl/                ← Los 11 archivos .STL individuales listos para laminar (PLA/PETG)
+├── capturas/           ← Capturas del visor 3D + planos CAD y vistas 3D de la tapa USB-C (13 PNG)
 ├── original/           ← Imagen conceptual original generada por IA de la que nació el proyecto
 └── recursos/           ← Material original de referencia (electrónica real, QR imprimible y audio)
     ├── mercadona_mercadona_cancion.mp3
@@ -40,8 +42,8 @@ Partimos de las fotografías con cotas reales del **Módulo de Sonido Grabable 8
 - **Batería LiPo**: `X502030` (`3.7 V · 200 mAh`), dimensiones `30.0 × 20.0 × 5.0 mm`.
 - **Pulsador táctil**: cuadrado `12.0 × 12.0 mm` cableado al conector `PLAY`.
 
-### Fase B · Rediseño mecánico y CAD 3D (impresión multicolor Snapmaker U1)
-Para adaptar la caja de `100 × 100 × 102 mm` a la electrónica real y mejorar su ergonomía y realismo, se rediseñaron y validaron los sólidos CAD en Python:
+### Fase B · Rediseño mecánico y CAD 3D íntegramente con Gemini Neon en Antigravity (impresión multicolor Snapmaker U1)
+Para adaptar la caja de `100 × 100 × 102 mm` a la electrónica real y mejorar su ergonomía y realismo, **todo el modelado 3D paramétrico (.STEP y .STL) fue generado y verificado íntegramente con _Gemini Neon_ directamente desde _Google Antigravity_** (un enfoque práctico que también forma parte de la formación **COATAC_IA_2026**: [formacion.jmcaamanog.com](https://formacion.jmcaamanog.com/)):
 1. **Base inferior (`1_base_inferior_gris`)**:
    - **Cámara interior optimizada** con 3 bahías independientes y holguras de impresión (`+0.5 / +0.8 mm`):
      - Cuna PCB (`47.4 × 25.6 mm`) con repisa perimetral a `Z = 5.5 mm` para librar soldaduras y tope trasero escalonado reforzado.
@@ -56,14 +58,17 @@ Para adaptar la caja de `100 × 100 × 102 mm` a la electrónica real y mejorar 
    - Cajera central rebajada de `12.5 × 12.5 × 3.0 mm` con canal de salida de cables de `5.0 mm`, montada sobre dos brazos elásticos tangenciales (`15.6 mm`) para amortiguar el final de carrera.
 3. **Accesorios y tornillería (`4_cuello_estriado_y_accesorios`)**:
    - Se añadieron las **4 tuercas hexagonales M4 (`Tuerca_Esquina_1..4`)** a juego con los 4 tornillos avellanados de esquina, además del cuello estriado dorado (`40` estrías), el clip retenedor en C y la tuerca hexagonal lateral.
-4. **Verificación geométrica estricta (regla de oro para impresión 3D)**:
+4. **Tapa atornillable USB-C + Interruptor (`7_tapa_usb_interruptor`)**:
+   - Diseñada a posteriori sobre las cotas exactas de la base ya impresa (`40,0 × 16,0 × 2,0 mm`, `R 3,5 mm`, chaflán frontal `0,6 mm`), con ventana redondeada USB-C (`12,8 × 7,2 mm`) que permite el paso completo del cabezal del cable, ranura fina de cápsula (`6,2 × 2,8 mm`) para accionar el interruptor ON/OFF con una punta, 4 taladros avellanados M2 (`Ø2,2` / `Ø4,2 mm`, `33 × 9 mm`) y labio guía trasero en L (`1,3 mm`, holgura `0,4 mm`) que actúa como plantilla de taladrado y respeta intactos los iconos en relieve `O | I` y `USB`.
+   - Verificada con 8 controles automáticos de colisión y holgura, documentada en [capturas/12_tapa_usb_plano_cad.png](capturas/12_tapa_usb_plano_cad.png) y [capturas/13_tapa_usb_vistas_3d.png](capturas/13_tapa_usb_vistas_3d.png), e integrada en `index.html` y `stl.zip`.
+5. **Verificación geométrica estricta (regla de oro para impresión 3D)**:
    - Todos los archivos `.STL` fueron verificados topológicamente como **mallas 2-manifold cerradas (watertight)**: `0` aristas abiertas (`boundary = 0`), `0` aristas no-manifold (`non_manifold = 0`) y `0` normales invertidas (`bad_orient = 0`).
    - Todos los archivos `.STEP` (AP214) se verificaron con **0 referencias rotas** y sólidos independientes por color para laminar en extrusores multicolor.
    - **Convención de ejes**: los `.step` y `.stl` individuales están apoyados en cama (`Z_min = 0.0 mm`), mientras que el conjunto completo y el visor 3D conservan sus coordenadas reales de ensamblaje.
 
 ### Fase C · Desarrollo del visor 3D web interactivo (`index.html`)
 En lugar de depender de librerías pesadas o servidores, construimos un visor CAD a medida en **HTML + WebGL 1.0 puro + shaders GLSL + JavaScript** con todos los recursos embebidos en Base64:
-- **Geometría 3D incrustada**: las 27 mallas triangulares codificadas como `Float32Array` en Base64 (`window.MODEL_PARTS`), más la electrónica modelada proceduralmente a escala real (con cable USB-C animado).
+- **Geometría 3D incrustada**: las 28 mallas triangulares codificadas como `Float32Array` en Base64 (`window.MODEL_PARTS`, incluyendo `Tapa_USB_Interruptor`), más la electrónica modelada proceduralmente a escala real (con cable USB-C animado).
 - **Audio MP3 y fotos reales incrustados**: la canción (`data:audio/mpeg;base64,...`) y las 3 fotos con cotas reales (`data:image/avif;base64,...`) viajan dentro del propio archivo.
 - **Tailwind CSS embebido**: la librería de estilos está integrada inline dentro de `index.html` para que cargue al instante y funcione **100% sin internet**.
 
@@ -76,7 +81,7 @@ En lugar de depender de librerías pesadas o servidores, construimos un visor CA
 | Sección / Control | Qué hace | Cómo está implementado técnicamente |
 | :--- | :--- | :--- |
 | **Botón rojo `PULSAR`** (o clic en la seta / tecla `Espacio`) | Hunde el botón `8 mm`, comprime el muelle, reproduce la canción MP3 y vibra en Android. | Interpolación senoidal de traslación Z (`-8 mm`) y escala Z del muelle respecto al pivote `Z = 49 mm`, reproducción `<audio>` con desbloqueo táctil iOS/Android y `navigator.vibrate()`. |
-| **Orden de montaje en 7 pasos** | 1º Inf. Abajo (Base + Electrónica + Soporte) → 2º Sup. Arriba (Tapa + Cuello + Muelle + Seta + Clip) → 3º Unión vertical → 4º 4 Tornillos → 5º 4 Tuercas → 6º Tuerca Lateral → 7º Pulsación + Canción automática. | Función cinemática `getPartKinematics(p)` basada en ventanas normalizadas `t ∈ [0, 1]` con suavizado cúbico `easeOutCubic`; cada tornillo y tuerca está separado en su propia malla (`1..4`) para girar sobre su propio eje `(±38, ±38)`. |
+| **Orden de montaje en 8 pasos** | 1º Inf. Abajo (Base + Electrónica + Soporte) → 2º Sup. Arriba (Tapa + Cuello + Muelle + Seta + Clip) → 3º Unión vertical → 4º 4 Tornillos → 5º 4 Tuercas → 6º Tuerca Lateral → 7º Remate decorativo: Tapa USB-C + Interruptor → 8º Pulsación + Canción automática. | Función cinemática `getPartKinematics(p)` basada en ventanas normalizadas `t ∈ [0, 1]` con suavizado cúbico `easeOutCubic`; cada tornillo y tuerca está separado en su propia malla (`1..4`) para girar sobre su propio eje `(±38, ±38)` y la tapa USB-C entra al final desde `+X`. |
 | **Barra superior derecha: Zoom suave + Avance/Bucle** | Zoom logarítmico (`30%` a `445%`, inicial `44%`) con `−`, barra, `+` y `⌖` encajar; debajo, con igual ancho: `↺` reiniciar, `▶ / ⏸` reproducir/pausar, barra manual y `☑ Bucle`. | Amortiguación exponencial independiente de FPS (`1 - e^(-11·dt)`), escala logarítmica para zoom perceptualmente uniforme e iconos SVG vectoriales. |
 | **Corte 3D macizo (`Corte 3D`)** | Plano 3D visible y **arrastrable directamente con el ratón o dedo** en los ejes **X / Y / Z**, con inversión de lado y acceso directo `USB`. Los sólidos cortados se ven **macizos con rayado CAD a 45°**. | Técnica **WebGL Stencil Buffer Capping** (`stencil: true`): pasada de conteo de caras frontales (`INCR_WRAP`) vs traseras (`DECR_WRAP`) y dibujo del plano de tapa donde `stencil != 0` con sombreado rayado en el Fragment Shader. |
 | **Interruptor `Persp \| Iso`** | Alterna entre proyección perspectiva cónica y vista isométrica/ortográfica CAD sin fuga. | Cambio en tiempo real entre matriz `mat4Persp(...)` y `mat4Ortho(...)` ajustada al mismo tamaño aparente en pantalla. |

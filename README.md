@@ -2,7 +2,7 @@
 
 <p align="center">
   <strong>Una broma convertida en producto real imprimible en 3D + visor CAD interactivo en WebGL + Realidad Aumentada,<br/>
-  diseñado y programado de principio a fin conversando con IA — sin usar programas de CAD ni saber programar.</strong>
+  con todo el modelado 3D generado íntegramente con <em>Gemini Neon</em> directamente desde <em>Google Antigravity</em> — sin usar programas de CAD ni saber programar.</strong>
 </p>
 
 <p align="center">
@@ -13,12 +13,18 @@
   <a href="https://jmcaamanog.github.io/BOTON_3D_INTERACTIVO/">
     <strong>🌐 Espejo GitHub Pages</strong>
   </a>
+  &nbsp;·&nbsp;
+  <a href="https://formacion.jmcaamanog.com/">
+    <strong>🎓 Formación COATAC_IA_2026</strong>
+  </a>
   <br/>
   <a href="https://boton-mercadona-3d.netlify.app/?demo=corte">✂️ Corte 3D</a>
   &nbsp;·&nbsp;
   <a href="https://boton-mercadona-3d.netlify.app/?demo=rayosx">☢️ Rayos X</a>
   &nbsp;·&nbsp;
   <a href="https://boton-mercadona-3d.netlify.app/?demo=despiece">💥 Despiece</a>
+  &nbsp;·&nbsp;
+  <a href="https://boton-mercadona-3d.netlify.app/?demo=tapa">🔌 Tapa USB-C</a>
   &nbsp;·&nbsp;
   <a href="https://boton-mercadona-3d.netlify.app/?demo=cama">🛏️ Cama 3D</a>
   &nbsp;·&nbsp;
@@ -32,6 +38,21 @@
   &nbsp;·&nbsp;
   <a href="./stl.zip">📦 Descargar STL (.zip)</a>
 </p>
+
+---
+
+## 🚀 Un salto adelante: modelado 3D real con Gemini Neon directamente desde Antigravity
+
+> **Todo el modelado 3D de este repositorio —desde la carcasa principal y los engranajes/muelle imprimible hasta la última tapa atornillable USB-C validada en físico— ha salido íntegramente de _Gemini Neon_ trabajando directamente desde _Google Antigravity_.**
+
+Esto representa un **gran paso adelante** en el diseño industrial y técnico asistido por IA: sin abrir Fusion 360, SolidWorks ni Blender, **Antigravity + Gemini Neon** es capaz de:
+- Leer y auditar geometría 3D real directamente sobre mallas `.STL` existentes al milímetro (biseles, relieves, espesores de pared y colisiones internas).
+- Generar **piezas mecánicas paramétricas 100 % cerradas (*watertight*, 2-manifold, `0` errores)** en `.STL` y `.STEP` AP214 listas para laminar e imprimir a la primera.
+- Producir **planos CAD acotados, secciones transversales y vistas 3D sombreadas de verificación** antes de gastar un solo gramo de filamento.
+- Integrar cada nueva pieza automáticamente en el **visor WebGL 3D interactivo**, su animación de montaje y la cama de impresión virtual.
+
+🎓 **¿Te interesa aprender a dominar estos flujos en proyectos reales?**  
+Este tipo de metodologías —modelado técnico con IA, automatización de ingeniería y creación de herramientas interactivas desde Antigravity sin programación previa— forman parte de los contenidos prácticos que imparto en la formación **COATAC_IA_2026**: 👉 **[formacion.jmcaamanog.com](https://formacion.jmcaamanog.com/)**.
 
 ---
 
@@ -54,7 +75,7 @@ Antes de existir una sola pieza 3D, un solo archivo `.STL` o una sola línea de 
 </p>
 
 > **¿Ves los detalles que delatan que era solo un concepto IA?** Fíjate en la leyenda repetida *"EN CASO DE **DE** EMERGENCIA **EN**"* o en el mecanismo interior puramente ilustrativo e imposible de montar tal cual.
-> A partir de **esta única imagen** (más 3 fotos reales del módulo de sonido de 8 MB) y conversando con IA, se transformó la idea en un producto completo real: se corrigió el relieve tipográfico, se modelaron **10 piezas CAD cerradas e imprimibles al milímetro**, se construyó la **web interactiva 3D con sonido y personalización de colores**, y se generó la versión de **Realidad Aumentada a tamaño real (`10 × 10 × 10,2 cm`)**.
+> A partir de **esta única imagen** (más 3 fotos reales del módulo de sonido de 8 MB) y trabajando en **Antigravity con Gemini Neon**, se transformó la idea en un producto completo real: se corrigió el relieve tipográfico, se modelaron **11 piezas CAD cerradas e imprimibles al milímetro**, se construyó la **web interactiva 3D con sonido y personalización de colores**, y se generó la versión de **Realidad Aumentada a tamaño real (`10 × 10 × 10,2 cm`)**.
 
 ---
 
@@ -134,6 +155,20 @@ Antes de existir una sola pieza 3D, un solo archivo `.STL` o una sola línea de 
 
 ---
 
+### 11. Tapa atornillable USB-C + Interruptor (`7_tapa_usb_interruptor`) — Validada en físico
+Diseñada y verificada **íntegramente con Gemini Neon en Antigravity** leyendo las cotas exactas de la base ya impresa (`1_base_inferior_gris.stl`, ventana `25 × 12,6 mm`) y de la electrónica `LJY-YYH-V1`:
+- **Placa exterior `40,0 × 16,0 × 2,0 mm`** (`R 3,5 mm`, chaflán frontal `0,6 mm`): queda a `1,4 mm` del plano de apoyo y `0,4 mm` por debajo de los iconos en relieve `O | I` y `USB`, que siguen totalmente visibles.
+- **Acceso mínimo y funcional**: abertura redondeada **`12,8 × 7,2 mm`** centrada en el USB-C (permite que la funda del cable pase hasta el fondo y cargue con firmeza) y ranura fina en cápsula **`6,2 × 2,8 mm`** para mover el interruptor ON/OFF con una punta.
+- **4 taladros avellanados para M2 × 5/6 mm** (`Ø2,2 mm` + avellanado `Ø4,2 mm` a 45°, distancia `33 × 9 mm`) + **labio trasero autocentrante en L (`1,3 mm`)** que encaja en el bisel existente y sirve de plantilla directa para taladrar con broca de `Ø1,5 mm`.
+- **Impresión sin soportes**: boca abajo en `Z = 0` (~1,4 g de filamento, ~10 min).
+
+| Plano CAD acotado y sección horizontal (`Z = 8,7 mm`) | Vistas 3D CAD: frontal, labio guía trasero, montaje y cable |
+| :---: | :---: |
+| [![Plano CAD y sección horizontal de la tapa USB-C](capturas/12_tapa_usb_plano_cad.png)](https://boton-mercadona-3d.netlify.app/?demo=tapa) | [![Vistas 3D de la tapa USB-C montada sobre la base](capturas/13_tapa_usb_vistas_3d.png)](https://boton-mercadona-3d.netlify.app/?demo=tapa) |
+| *[Ver pieza en el visor 3D en vivo](https://boton-mercadona-3d.netlify.app/?demo=tapa)* | *[Descargar STL](stl/7_tapa_usb_interruptor.stl) · [Descargar STEP](step/7_tapa_usb_interruptor.step)* |
+
+---
+
 ## 🛒 Lista de materiales (BOM) y presupuesto estimado
 
 | Componente | Especificación exacta | Coste aprox. |
@@ -152,13 +187,14 @@ Todos los archivos CAD y de malla han sido verificados como **mallas 2-manifold 
 
 | Pieza | CAD (`.STEP`) | Malla (`.STL`) | Filamento sugerido |
 | :--- | :--- | :--- | :--- |
-| **Conjunto completo** | [step/boton_emergencia_conjunto_completo.step](step/boton_emergencia_conjunto_completo.step) | [stl.zip](stl.zip) *(los 10 STL)* | Multicolor (4 colores) |
+| **Conjunto completo** | [step/boton_emergencia_conjunto_completo.step](step/boton_emergencia_conjunto_completo.step) | [stl.zip](stl.zip) *(los 11 STL)* | Multicolor (4 colores) |
 | **1. Base + Aleta ON/OFF + Iconos** | [step/1_base_inferior_gris.step](step/1_base_inferior_gris.step) | [stl/1_base_inferior_gris.stl](stl/1_base_inferior_gris.stl) | PLA/PETG Gris Antracita |
 | **2. Tapa + Leyenda en relieve** | [step/2_tapa_superior_amarilla.step](step/2_tapa_superior_amarilla.step) | [stl/2_tapa_superior_amarilla.stl](stl/2_tapa_superior_amarilla.stl) | Amarillo + Negro |
 | **3. Botón Seta + Flechas** | [step/3_boton_seta_rojo.step](step/3_boton_seta_rojo.step) | [stl/3_boton_seta_rojo.stl](stl/3_boton_seta_rojo.stl) | Rojo + Blanco |
 | **4. Cuello, Clip, 4 Tornillos y 4 Tuercas** | [step/4_cuello_estriado_y_accesorios.step](step/4_cuello_estriado_y_accesorios.step) | [stl/4_cuello_estriado_y_accesorios.stl](stl/4_cuello_estriado_y_accesorios.stl) | Dorado / Plata (Silk/PETG) |
 | **5. Soporte Pulsador Flexible** | [step/5_soporte_pulsador_interior.step](step/5_soporte_pulsador_interior.step) | [stl/5_soporte_pulsador_interior.stl](stl/5_soporte_pulsador_interior.stl) | PETG Gris *(brazos flexibles)* |
 | **6. Muelle Imprimible** | [step/6_muelle_imprimible.step](step/6_muelle_imprimible.step) | [stl/6_muelle_imprimible.stl](stl/6_muelle_imprimible.stl) | PETG / Nylon |
+| **7. Tapa USB-C + Interruptor (4×M2)** | [step/7_tapa_usb_interruptor.step](step/7_tapa_usb_interruptor.step) | [stl/7_tapa_usb_interruptor.stl](stl/7_tapa_usb_interruptor.stl) | PLA/PETG Gris *(boca abajo, sin soportes)* |
 | **Modelos AR + Pegatina QR** | [ar/boton_musical_3d.glb](ar/boton_musical_3d.glb) *(Android)* | [ar/boton_musical_3d.usdz](ar/boton_musical_3d.usdz) *(iPhone)* | [recursos/qr_regalo_boton_3d.svg](recursos/qr_regalo_boton_3d.svg) |
 
 ---
@@ -189,19 +225,21 @@ BOTON_3D_INTERACTIVO/
 ├── stl.zip             ← Paquete con todos los archivos .STL imprimibles
 ├── ar/                 ← Modelos a escala real para Realidad Aumentada (.glb Android y .usdz iPhone)
 ├── original/           ← Imagen conceptual original generada por IA de la que nació el proyecto
-├── capturas/           ← Capturas reales del visor en PC y móvil (incl. Edición Mercadona e Historia)
-├── step/               ← Los 7 modelos CAD paramétricos (.STEP AP214)
-├── stl/                ← Los 10 archivos .STL individuales listos para laminar
+├── capturas/           ← Capturas reales del visor + planos y vistas CAD de la tapa USB-C (13 PNG)
+├── step/               ← Los 8 modelos CAD paramétricos (.STEP AP214)
+├── stl/                ← Los 11 archivos .STL individuales listos para laminar
 └── recursos/           ← Fotos reales de la electrónica, pegatina QR imprimible (.svg) y MP3
 ```
 
 ---
 
-## 👨💻 Autor
+## 👨💻 Autor y Formación `COATAC_IA_2026`
 
 **Jose Manuel Caamaño González** | Arquitecto Técnico & BIM Manager  
 Digital Product Lead | ConTech & Digital Twin SaaS | Data Analytics (SQL, Power BI)  
 
-Hecho con código y café desde A Coruña. ☕  
-[LinkedIn](https://www.linkedin.com/in/jmcaamanog/) · [Web Personal](https://jmcaamanog.com)
+🎓 **Formación `COATAC_IA_2026`** — Flujos reales de IA aplicada, modelado 3D paramétrico con **Gemini Neon** en **Google Antigravity** y desarrollo de herramientas técnicas sin código: **[formacion.jmcaamanog.com](https://formacion.jmcaamanog.com/)**
+
+Hecho con código, Antigravity + Gemini Neon y café desde A Coruña. ☕  
+[Formación COATAC_IA_2026](https://formacion.jmcaamanog.com/) · [LinkedIn](https://www.linkedin.com/in/jmcaamanog/) · [Web Personal](https://jmcaamanog.com)
 
